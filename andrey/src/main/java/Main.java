@@ -2,7 +2,7 @@
  * 16.08.16.
  * @author Andrey Telegin
  *
- * The programm creates an array of 10 objects (10 big companies).
+ * The program creates an array of 10 objects (10 big companies).
  * Sorts them by the profit, assets, Forbes List index and name.
  * Prints the sorted data in a table.
  * All the data is real and it corresponds to a Forbes report data on top 200 Ukraine companies as of 2015.
