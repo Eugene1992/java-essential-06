@@ -1,5 +1,6 @@
 /**
  * @author Andrey Telegin
+ *         <p>Class Company has four private attributes: profit, assets, name, forbesListIndex and no methotds</p>
  */
 class Company {
     /**
