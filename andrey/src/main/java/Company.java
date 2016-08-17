@@ -1,41 +1,53 @@
 /**
- * Andrey on 16.08.16.
+ * @author Andrey Telegin
  */
-public class Company{
+public class Company {
+    /**
+     * profit attribute shows the company's profit in mln.UAH for 2015
+     */
     private int profit;
+    /**
+     * assets attribute shows the company's asset in mln.UAH as of 2015
+     */
     private int assets;
+    /**
+     * name attribute
+     */
     private String name;
+    /**
+     * Forbes list index shows the index of a company in Forbes list as of 2015.
+     */
     private int forbesListIndex;
 
-    //Name
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
-    public String getName(){
+
+    public String getName() {
         return this.name;
     }
 
-    //Profit
-    public void setProfit(int profit){
+    public void setProfit(int profit) {
         this.profit = profit;
     }
-    public int getProfit(){
+
+    public int getProfit() {
         return this.profit;
     }
 
-    //Asset
-    public void setAssets(int assets){
+    public void setAssets(int assets) {
         this.assets = assets;
     }
-    public int getAssets(){
+
+    public int getAssets() {
         return this.assets;
     }
 
-    //Forbes List Index
-    public void setForbesListIndex(int forbesListIndex){
+    public void setForbesListIndex(int forbesListIndex) {
         this.forbesListIndex = forbesListIndex;
     }
-    public int getForbesListIndex(){
+
+    public int getForbesListIndex() {
         return this.forbesListIndex;
     }
 }

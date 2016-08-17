@@ -1,17 +1,16 @@
 /**
- * 16.08.16.
  * @author Andrey Telegin
- *
- * The program creates an array of 10 objects (10 big companies).
- * Sorts them by the profit, assets, Forbes List index and name.
- * Prints the sorted data in a table.
- * All the data is real and it corresponds to a Forbes report data on top 200 Ukraine companies as of 2015.
- * [url]http://forbes.net.ua/ratings/3[/url]
- * The numbers in profit, assets are in mlns. UAH
+ *         <p>
+ *         The program creates an array of 10 objects (10 big companies).
+ *         Sorts them by the profit, assets, Forbes List index and name.
+ *         Prints the sorted data in a table.
+ *         All the data is real and it corresponds to a Forbes report data on top 200 Ukraine companies as of 2015.
+ *         http://forbes.net.ua/ratings/3
+ *         The numbers in profit, assets are in mlns. UAH
  */
-public class Main{
-    public static void main(String[] args){
-        Company [] companyArray = new Company[10];
+public class Main {
+    public static void main(String[] args) {
+        Company[] companyArray = new Company[10];
         initCompanyArray(companyArray);
 
         sortByProfit(companyArray);
@@ -32,108 +31,123 @@ public class Main{
 
     }
 
-    /*	prints out the "name", "profit", "assets" and "Forbes list index" fields of a Company in array
-    *	gets Company array as it's input
-    */
-    static void printCompanyArray(Company[] arCompany){
+    /**
+     * prints out the "name", "profit", "assets" and "Forbes list index" fields of a Company in array
+     *
+     * @param arrCompany An array to be printed
+     */
+    private static void printCompanyArray(Company[] arrCompany) {
         final String LINE = "----------------------------------------------------";
         System.out.println(LINE);
-        /* To make the names of equal lengths the loop below adds up certain amount of whitespaces
-         * Again, this is for a good-looking output.
-         */
         String nameWithSpaces;
-        int maxName = getLongestName(arCompany);
-        for (Company aComp: arCompany){
+        int maxName = getLongestName(arrCompany);
+        for (Company aComp : arrCompany) {
             nameWithSpaces = aComp.getName();
-            while(nameWithSpaces.length() < maxName){
+            while (nameWithSpaces.length() < maxName) {
                 nameWithSpaces += " ";
             }
-            System.out.printf("%s \t %d \t %d   \t %d \n",nameWithSpaces,aComp.getProfit(),aComp.getAssets(),aComp.getForbesListIndex());
-            /*System.out.println(nameWithSpaces+"\t"+arCompany[i].getProfit()+"\t\t"+arCompany[i].getAssets()+"\t\t"+arCompany[i].getForbesListIndex());*/
+            System.out.printf("%s \t %d \t %d   \t %d \n", nameWithSpaces, aComp.getProfit(), aComp.getAssets(), aComp.getForbesListIndex());
+            /*System.out.println(nameWithSpaces+"\t"+arrCompany[i].getProfit()+"\t\t"+arrCompany[i].getAssets()+"\t\t"+arrCompany[i].getForbesListIndex());*/
         }
         System.out.println(LINE);
     }
 
-    /*	To make pretty good-looking table we must know the longest name's length.
-    *	Just for the output purposes.
-    */
-    static int getLongestName(Company[] arCompany){
-        int maxNameLength = arCompany[0].getName().length();
-        for (Company elem:arCompany){
-            if (elem.getName().length()>maxNameLength){
+    /**
+     * method searches for the longest name in array.
+     *
+     * @param arrCompany an array of type Company to be sorted
+     * @return maxNameLength int value of a longest name's length
+     */
+    private static int getLongestName(Company[] arrCompany) {
+        int maxNameLength = arrCompany[0].getName().length();
+        for (Company elem : arrCompany) {
+            if (elem.getName().length() > maxNameLength) {
                 maxNameLength = elem.getName().length();
             }
         }
         return maxNameLength;
     }
 
-    /* A long boring series of the same classic bubble-sorting methods to sort Companies by a field.
-    *	Repeating code IS bad.
-    *  Should've done it with some universal method, yet don't know how.
-    */
-    static void sortByAssets(Company[] arCompany){
-        int len = arCompany.length;
-        for (int j=0; j<len-1; j++){
-            for (int i=0; i<len-1; i++){
-                if (arCompany[i+1].getAssets() > arCompany[i].getAssets()){
-                    Company temp = arCompany[i+1];
-                    arCompany[i+1] = arCompany[i];
-                    arCompany[i] = temp;
+    /**
+     * Method sorts the elements of an array by the values of 'assets' field.
+     *
+     * @param arrCompany an array of type Company to be sorted.
+     */
+    private static void sortByAssets(Company[] arrCompany) {
+        int len = arrCompany.length;
+        for (int j = 0; j < len - 1; j++) {
+            for (int i = 0; i < len - 1; i++) {
+                if (arrCompany[i + 1].getAssets() > arrCompany[i].getAssets()) {
+                    Company temp = arrCompany[i + 1];
+                    arrCompany[i + 1] = arrCompany[i];
+                    arrCompany[i] = temp;
                 }
             }
         }
     }
 
-    static void sortByProfit(Company[] arCompany){
-        int len = arCompany.length;
-        for (int j=0; j<len-1; j++){
-            for (int i=0; i<len-1; i++){
-                if (arCompany[i+1].getProfit() > arCompany[i].getProfit()){
-                    Company temp = arCompany[i+1];
-                    arCompany[i+1] = arCompany[i];
-                    arCompany[i] = temp;
+    /**
+     * Method sorts the elements of an array by the values of 'profit' field.
+     *
+     * @param arrCompany an array of type Company to be sorted.
+     */
+    private static void sortByProfit(Company[] arrCompany) {
+        int len = arrCompany.length;
+        for (int j = 0; j < len - 1; j++) {
+            for (int i = 0; i < len - 1; i++) {
+                if (arrCompany[i + 1].getProfit() > arrCompany[i].getProfit()) {
+                    Company temp = arrCompany[i + 1];
+                    arrCompany[i + 1] = arrCompany[i];
+                    arrCompany[i] = temp;
                 }
             }
         }
     }
 
-    static void sortByForbesIndex(Company[] arCompany){
-        int len = arCompany.length;
-        for (int j=0; j<len-1; j++){
-            for (int i=0; i<len-1; i++){
-                if (arCompany[i+1].getForbesListIndex() < arCompany[i].getForbesListIndex()){
-                    Company temp = arCompany[i+1];
-                    arCompany[i+1] = arCompany[i];
-                    arCompany[i] = temp;
+    /**
+     * Method sorts the elements of an array by the values of 'Forbes list index' field.
+     *
+     * @param arrCompany an array of type Company to be sorted.
+     */
+    private static void sortByForbesIndex(Company[] arrCompany) {
+        int len = arrCompany.length;
+        for (int j = 0; j < len - 1; j++) {
+            for (int i = 0; i < len - 1; i++) {
+                if (arrCompany[i + 1].getForbesListIndex() < arrCompany[i].getForbesListIndex()) {
+                    Company temp = arrCompany[i + 1];
+                    arrCompany[i + 1] = arrCompany[i];
+                    arrCompany[i] = temp;
                 }
             }
         }
     }
 
-    /* This method is a bit different from the three above. A bit.
-    *  The method 'compareToIgnoreCase()' makes a difference and it rocks!
-    */
-    static void sortByName(Company[] arCompany){
-        int len = arCompany.length;
+    /**
+     * Method sorts the elements of an array by the values of 'name' field.
+     *
+     * @param arrCompany an array of type Company to be sorted.
+     */
+    private static void sortByName(Company[] arrCompany) {
+        int len = arrCompany.length;
 
-        for (int j=0; j<len-1; j++){
-            for (int i=0; i<len-1; i++){
-				/* int str1.compareToIgnoreCase(str2)*/
-                if (arCompany[i+1].getName().compareToIgnoreCase(arCompany[i].getName()) < 0){
-                    Company temp = arCompany[i+1];
-                    arCompany[i+1] = arCompany[i];
-                    arCompany[i] = temp;
+        for (int j = 0; j < len - 1; j++) {
+            for (int i = 0; i < len - 1; i++) {
+                if (arrCompany[i + 1].getName().compareToIgnoreCase(arrCompany[i].getName()) < 0) {
+                    Company temp = arrCompany[i + 1];
+                    arrCompany[i + 1] = arrCompany[i];
+                    arrCompany[i] = temp;
                 }
             }
         }
     }
 
-    /*Methods creates objects of ' Company ' type, fills the fields with values
-    * and assigns them to array elements.
-    * Method gets an array of Company elements as it's input argument.
-    */
-    static void initCompanyArray(Company[] aCompanyArray){
-        //assert aCompanyArray.length == 10;
+    /**
+     * Method gets an array of Company elements as it's input argument and creates objects of ' Company ' type,
+     * fills the fields with values and assigns them to array elements.
+     *
+     * @param arrCompany an array of type Company to be initialized.
+     */
+    private static void initCompanyArray(Company[] arrCompany) {
         System.out.println("Initializing array...");
 
         Company metinvest = new Company();
@@ -142,7 +156,7 @@ public class Main{
         metinvest.setAssets(31756);
         metinvest.setForbesListIndex(1);
 
-        aCompanyArray[0] = metinvest;
+        arrCompany[0] = metinvest;
 
         Company privatbank = new Company();
         privatbank.setName("PrivatBank");
@@ -150,7 +164,7 @@ public class Main{
         privatbank.setAssets(204585);
         privatbank.setForbesListIndex(3);
 
-        aCompanyArray[1] = privatbank;
+        arrCompany[1] = privatbank;
 
         Company motorsich = new Company();
         motorsich.setName("Motor Sich");
@@ -158,7 +172,7 @@ public class Main{
         motorsich.setAssets(16041);
         motorsich.setForbesListIndex(8);
 
-        aCompanyArray[2] = motorsich;
+        arrCompany[2] = motorsich;
 
         Company roshen = new Company();
         roshen.setName("Roshen");
@@ -166,7 +180,7 @@ public class Main{
         roshen.setAssets(6577);
         roshen.setForbesListIndex(13);
 
-        aCompanyArray[3] = roshen;
+        arrCompany[3] = roshen;
 
         Company philipmorris = new Company();
         philipmorris.setName("Philip Morris Ukraine");
@@ -174,7 +188,7 @@ public class Main{
         philipmorris.setAssets(4137);
         philipmorris.setForbesListIndex(17);
 
-        aCompanyArray[4] = philipmorris;
+        arrCompany[4] = philipmorris;
 
         Company atb = new Company();
         atb.setName("ATB-Market");
@@ -182,7 +196,7 @@ public class Main{
         atb.setAssets(5461);
         atb.setForbesListIndex(29);
 
-        aCompanyArray[5] = atb;
+        arrCompany[5] = atb;
 
         Company epicentr = new Company();
         epicentr.setName("Epitsentr K");
@@ -190,7 +204,7 @@ public class Main{
         epicentr.setAssets(11240);
         epicentr.setForbesListIndex(9);
 
-        aCompanyArray[6] = epicentr;
+        arrCompany[6] = epicentr;
 
         Company ukrtatnafta = new Company();
         ukrtatnafta.setName("UkrTatNafta");
@@ -198,7 +212,7 @@ public class Main{
         ukrtatnafta.setAssets(8720);
         ukrtatnafta.setForbesListIndex(15);
 
-        aCompanyArray[7] = ukrtatnafta;
+        arrCompany[7] = ukrtatnafta;
 
         Company kievstar = new Company();
         kievstar.setName("Kyivstar");
@@ -206,7 +220,7 @@ public class Main{
         kievstar.setAssets(13513);
         kievstar.setForbesListIndex(4);
 
-        aCompanyArray[8] = kievstar;
+        arrCompany[8] = kievstar;
 
         Company carlsberg = new Company();
         carlsberg.setName("Carlsberg Ukraine");
@@ -214,6 +228,6 @@ public class Main{
         carlsberg.setAssets(4065);
         carlsberg.setForbesListIndex(23);
 
-        aCompanyArray[9] = carlsberg;
+        arrCompany[9] = carlsberg;
     }
 }
