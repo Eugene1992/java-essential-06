@@ -4,7 +4,7 @@
  */
 class CompanyProc {
     /**
-     * Method start creates an array of 'Company', initializes, processes and prints out processed information.
+     * Method creates an array of 'Company', initializes, processes and prints out processed information.
      */
     void start() {
         /**

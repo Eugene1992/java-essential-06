@@ -10,11 +10,6 @@
 public class Main {
     public static void main(String[] args) {
         CompanyProc cProc = new CompanyProc();
-        /**
-         * Method <i>start</i> initializes, processes and prints out the data
-         */
         cProc.start();
     }
-
-
 }
