@@ -1,14 +1,16 @@
+package homework01;
+
 /**
  * @author Andrey Telegin
- *         <p> Class CompanyProc contains methods to initialize and process an array of Company.</p>
+ *         <p> Class homework01.CompanyProcess contains methods to initialize and process an array of homework01.Company.</p>
  */
-class CompanyProc {
+class CompanyProcess {
     /**
-     * Method creates an array of 'Company', initializes, processes and prints out processed information.
+     * Method creates an array of 'homework01.Company', initializes, processes and prints out processed information.
      */
     void start() {
         /**
-         * array companyArray of 10 elements of Company
+         * array companyArray of 10 elements of homework01.Company
          */
         Company[] companyArray = new Company[10];
 
@@ -32,7 +34,7 @@ class CompanyProc {
     }
 
     /**
-     * prints out the "name", "profit", "assets" and "Forbes list index" fields of a Company in array
+     * prints out the "name", "profit", "assets" and "Forbes list index" fields of a homework01.Company in array
      *
      * @param arrCompany An array to be printed
      */
@@ -55,7 +57,7 @@ class CompanyProc {
     /**
      * Method sorts the elements of an array by the values of 'name' field.
      *
-     * @param arrCompany an array of type Company to be sorted.
+     * @param arrCompany an array of type homework01.Company to be sorted.
      */
     private static void sortByName(Company[] arrCompany) {
         int len = arrCompany.length;
@@ -74,7 +76,7 @@ class CompanyProc {
     /**
      * Method sorts the elements of an array by the values of 'Forbes list index' field.
      *
-     * @param arrCompany an array of type Company to be sorted.
+     * @param arrCompany an array of type homework01.Company to be sorted.
      */
     private static void sortByForbesIndex(Company[] arrCompany) {
         int len = arrCompany.length;
@@ -92,7 +94,7 @@ class CompanyProc {
     /**
      * Method sorts the elements of an array by the values of 'profit' field.
      *
-     * @param arrCompany an array of type Company to be sorted.
+     * @param arrCompany an array of type homework01.Company to be sorted.
      */
     private static void sortByProfit(Company[] arrCompany) {
         int len = arrCompany.length;
@@ -110,7 +112,7 @@ class CompanyProc {
     /**
      * Method sorts the elements of an array by the values of 'assets' field.
      *
-     * @param arrCompany an array of type Company to be sorted.
+     * @param arrCompany an array of type homework01.Company to be sorted.
      */
     private static void sortByAssets(Company[] arrCompany) {
         int len = arrCompany.length;
@@ -128,7 +130,7 @@ class CompanyProc {
     /**
      * method searches for the longest name in array.
      *
-     * @param arrCompany an array of type Company to be sorted
+     * @param arrCompany an array of type homework01.Company to be sorted
      * @return maxNameLength int value of a longest name's length
      */
     private static int getLongestName(Company[] arrCompany) {
@@ -142,10 +144,10 @@ class CompanyProc {
     }
 
     /**
-     * Method gets an array of Company elements as it's input argument and creates objects of ' Company ' type,
+     * Method gets an array of homework01.Company elements as it's input argument and creates objects of ' homework01.Company ' type,
      * fills the fields with values and assigns them to array elements.
      *
-     * @param arrCompany an array of type Company to be initialized.
+     * @param arrCompany an array of type homework01.Company to be initialized.
      */
     private static void initCompanyArray(Company[] arrCompany) {
         System.out.println("Initializing array...");

@@ -1,6 +1,8 @@
+package homework01;
+
 /**
  * @author Andrey Telegin
- *         <p>Class Company has four private attributes: profit, assets, name, forbesListIndex and no methotds</p>
+ *         <p>Class homework01.Company has four private attributes: profit, assets, name, forbesListIndex and no methotds</p>
  */
 class Company {
     /**

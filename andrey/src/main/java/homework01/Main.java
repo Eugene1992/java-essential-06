@@ -1,3 +1,5 @@
+package homework01;
+
 /**
  * @author Andrey Telegin
  *         <p>The program creates an array of 10 objects (10 big companies).
@@ -9,7 +11,7 @@
  */
 public class Main {
     public static void main(String[] args) {
-        CompanyProc cProc = new CompanyProc();
+        CompanyProcess cProc = new CompanyProcess();
         cProc.start();
     }
 }
