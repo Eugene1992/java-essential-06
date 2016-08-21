@@ -1,10 +1,9 @@
 package homework02;
 
 /**
- * @TODO Javadoc
- * Created by User on 20.08.16.
+ * @author Andrey Telegin.
  */
-class Shape {
+abstract class Shape {
     protected static final double MAXSIZE = 10000d;
     private String name;
 
@@ -16,7 +15,5 @@ class Shape {
         this.name = name;
     }
 
-    double getArea(){
-       return 0;
-    }
+    abstract double getArea();
 }

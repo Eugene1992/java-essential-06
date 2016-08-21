@@ -1,32 +1,35 @@
 package homework02;
 
 /**
- * @TODO Javadoc, print out
- *
- * Created by User on 21.08.16.
+ * @author Andrey Telegin.
+ *         <p>Class creates, initializes, sorts the elements by an area and prints out the array of Shape.</p>
  */
 class ShapeExec {
-    //Shape[] arrayOfShape;
     void start() {
-        Shape[] arrayOfShape = new Shape[9];
+        Shape[] arrayOfShape = new Shape[10];
         initArrOfShapes(arrayOfShape);
-        printArrayOfShapes(arrayOfShape);
+        printShapeArray(arrayOfShape);
         sortByArea(arrayOfShape);
-        printArrayOfShapes(arrayOfShape);
+        printShapeArray(arrayOfShape);
     }
 
-    static void initArrOfShapes(Shape[] arrShape) {
+    /**
+     * Method initializes an array of elements of Shape type.
+     *
+     * @param arrShape input array of Shape.
+     */
+    private static void initArrOfShapes(Shape[] arrShape) {
         Shape smallSquare = new Square(40.5, "Small Square");
         arrShape[0] = smallSquare;
         Shape bigSquare = new Square(100.9, "Big Square");
         arrShape[1] = bigSquare;
         Shape ellipse = new Ellipse(12.3, 34.1, "Ellipse");
         arrShape[2] = ellipse;
-        Shape romb = new Rhombus(34.1, 36.6, "Rombik");
-        arrShape[3] = romb;
+        Shape rhombus = new Rhombus(34.1, 36.6, "Rhombus");
+        arrShape[3] = rhombus;
         Shape rect = new Rectangle(11.9, 55.6, "Rectangle");
         arrShape[4] = rect;
-        Shape pgram = new Parallelogram(17.5, 19.43, 45, "Parallelogram P-GRAM");
+        Shape pgram = new Parallelogram(17.5, 19.43, 45, "Parallelogram");
         arrShape[5] = pgram;
         Shape circle = new Circle(18.3, "Circle");
         arrShape[6] = circle;
@@ -34,11 +37,18 @@ class ShapeExec {
         arrShape[7] = triRight;
         Shape tri = new Triangle(50.2, 33.1, 49.2, "Regular Triangle");
         arrShape[8] = tri;
+        Shape trapez = new Trapezium(15.6, 24.1, .2, "Regular Triangle");
+        arrShape[8] = tri;
 
-        /*Shape[] temp= {smallSquare, bigSquare, ellipse, romb, rect, pgram, circle, triRight, tri};
+        /*Shape[] temp= {smallSquare, bigSquare, ellipse, rhombus, rect, pgram, circle, triRight, tri};
         arrShape = temp;*/
     }
 
+    /**
+     * Method sorts the elements (of type Shape) of an array by their area value.
+     *
+     * @param arrayOfShape an array of type homework02.Shape to be sorted.
+     */
     private static void sortByArea(Shape[] arrayOfShape) {
         int len = arrayOfShape.length;
         for (int j = 0; j < len - 1; j++) {
@@ -52,9 +62,46 @@ class ShapeExec {
         }
     }
 
+    @Deprecated
     private static void printArrayOfShapes(Shape[] arrayOfShape) {
         for (Shape aShape : arrayOfShape) {
-            System.out.printf("The area of %s is : \t\t\t\t %10.2f \n", aShape.getName(), aShape.getArea());
+            System.out.printf("The area of %s is :\t\t%5.2f\n", aShape.getName(), aShape.getArea());
         }
+    }
+
+    /**
+     * Prints out the "name", "profit", "assets" and "Forbes list index" fields of a homework01.Company in array
+     *
+     * @param arrayOfShape An array to be printed
+     */
+    private static void printShapeArray(Shape[] arrayOfShape) {
+        final String LINE = "----------------------------------------------------";
+        System.out.println(LINE);
+        String nameWithSpaces;
+        int maxName = getLongestName(arrayOfShape);
+        for (Shape shp : arrayOfShape) {
+            nameWithSpaces = shp.getName();
+            while (nameWithSpaces.length() < maxName) {
+                nameWithSpaces += " ";
+            }
+            System.out.printf("%s \t %5.2f \n", nameWithSpaces, shp.getArea());
+        }
+        System.out.println(LINE);
+    }
+
+    /**
+     * method searches for the longest name in array.
+     *
+     * @param arrayOfShape an array of type homework02.Shape to be sorted
+     * @return maxNameLength int value of a longest name's length
+     */
+    private static int getLongestName(Shape[] arrayOfShape) {
+        int maxNameLength = arrayOfShape[0].getName().length();
+        for (Shape shp : arrayOfShape) {
+            if (shp.getName().length() > maxNameLength) {
+                maxNameLength = shp.getName().length();
+            }
+        }
+        return maxNameLength;
     }
 }

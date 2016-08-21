@@ -1,30 +1,36 @@
 package homework02;
 
 /**
- * @TODO Javadoc
- * Created by User on 20.08.16.
+ * @author Andrey Telegin.
  */
 class Rectangle extends Parallelogram {
     private double sideA;
     private double sideB;
 
-    Rectangle(){
+    /**
+     * Overloaded constructor Rectangle().
+     */
+    Rectangle() {
 
     }
 
+    /**
+     * Constructor Rectangle creates rectangle with a given sides and name.
+     *
+     * @param sideA,sideB,name Sides and name for a new rectangle.
+     */
     Rectangle(double sideA, double sideB, String name) {
-        if (sideA > 0 && sideB>0 && sideA< MAXSIZE){
+        if (sideA != sideB && sideA > 0 && sideB > 0 && sideA < MAXSIZE) {
             this.sideA = sideA;
             this.sideB = sideB;
-        }
-        else {
+        } else {
             throw new IllegalArgumentException("Illegal input!");
         }
-        this.setName(name);
+        setName(name);
     }
 
     @Override
-    double getArea(){
-        return sideA*sideB;
+    double getArea() {
+        return sideA * sideB;
     }
 }

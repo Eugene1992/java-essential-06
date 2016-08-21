@@ -1,8 +1,7 @@
 package homework02;
 
 /**
- * @TODO Javadoc
- * Created by User on 20.08.16.
+ * @author Andrey Telegin.
  */
 final class RightTriangle extends Triangle {
     private double sideA;

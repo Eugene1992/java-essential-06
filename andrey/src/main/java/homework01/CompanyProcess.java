@@ -34,7 +34,7 @@ class CompanyProcess {
     }
 
     /**
-     * prints out the "name", "profit", "assets" and "Forbes list index" fields of a homework01.Company in array
+     * Prints out the "name", "profit", "assets" and "Forbes list index" fields of a homework01.Company in array
      *
      * @param arrCompany An array to be printed
      */

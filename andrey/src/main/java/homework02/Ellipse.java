@@ -1,18 +1,19 @@
 package homework02;
 
 /**
- * Created by User on 20.08.16.
- * @TODO Javadoc
+ * @author Andrey Telegin.
  */
 class Ellipse extends Shape {
     private double semiAxisA;
     private double semiAxisB;
 
-    Ellipse(){
-
+    /**
+     * Overloaded constructor Ellipse().
+     */
+    Ellipse() {
     }
 
-    Ellipse(double semiAxisA, double semiAxisB, String name){
+    Ellipse(double semiAxisA, double semiAxisB, String name) {
         if (semiAxisB > 0 && semiAxisA > 0 && semiAxisA < MAXSIZE && semiAxisB < MAXSIZE) {
             this.semiAxisA = semiAxisA;
             this.semiAxisB = semiAxisB;
@@ -24,6 +25,6 @@ class Ellipse extends Shape {
 
     @Override
     double getArea() {
-        return semiAxisA*semiAxisB*Math.PI;
+        return semiAxisA * semiAxisB * Math.PI;
     }
 }
