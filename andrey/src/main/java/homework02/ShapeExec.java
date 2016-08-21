@@ -37,7 +37,7 @@ class ShapeExec {
         arrShape[7] = triRight;
         Shape tri = new Triangle(50.2, 33.1, 49.2, "Regular Triangle");
         arrShape[8] = tri;
-        Shape trapez = new Trapezium(15.6, 24.1, .2, "Regular Triangle");
+        Shape trapez = new Trapezium(15.6, 24.1, 8.2, "Trapezium");
         arrShape[9] = trapez;
 
         /*Shape[] temp= {smallSquare, bigSquare, ellipse, rhombus, rect, pgram, circle, triRight, tri};
