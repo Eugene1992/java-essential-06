@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Areas areas = new Areas();
 
-        System.out.println(Areas.maxArea(areas.arrayArea));
+        System.out.println("The max area is- " + Areas.maxArea(areas.arrayArea));
 
     }
 }
