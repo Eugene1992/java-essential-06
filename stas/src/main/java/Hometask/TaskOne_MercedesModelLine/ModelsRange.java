@@ -5,28 +5,28 @@ package Hometask.TaskOne_MercedesModelLine;
  */
 public class ModelsRange {
     void start() {
-        Parameters[] parametersArray = new Parameters[10];
-        initParametersArray(parametersArray);
+        Car[] carArray = new Car[10];
+        initParametersArray(carArray);
 
-        sortByName(parametersArray);
+        sortByName(carArray);
         System.out.println("Let's get the array sorted by the model's name.");
-        printParametersArray(parametersArray);
+        printParametersArray(carArray);
 
-       /** sortByCarBody(parametersArray);
+       /** sortByCarBody(carArray);
         System.out.println("Let's get the array sorted by the car's body modification.");
-        printParametersArray(parametersArray);*/
+        printParametersArray(carArray);*/
 
-        sortByEngineVolume(parametersArray);
+        sortByEngineVolume(carArray);
         System.out.println("Let's get the array sorted by Forbes list index.");
-        printParametersArray(parametersArray);
+        printParametersArray(carArray);
 
-        sortByEnginePower(parametersArray);
+        sortByEnginePower(carArray);
         System.out.println("Let's get the array sorted by the company's name.");
-        printParametersArray(parametersArray);
+        printParametersArray(carArray);
 
-        sortByPrice(parametersArray);
+        sortByPrice(carArray);
         System.out.println("Let's get the array sorted by the company's name.");
-        printParametersArray(parametersArray);
+        printParametersArray(carArray);
 
 
 
@@ -35,12 +35,12 @@ public class ModelsRange {
 
     }
 
-    private static void printParametersArray(Parameters[] arrParameters) {
+    private static void printParametersArray(Car[] arrParameters) {
         final String LINE = "----------------------------------------------------";
         System.out.println(LINE);
         String nameWithSpaces;
         int maxName = getLongestName(arrParameters);
-        for (Parameters aComp : arrParameters) {
+        for (Car aComp : arrParameters) {
             nameWithSpaces = aComp.getName();
             while (nameWithSpaces.length() < maxName) {
                 nameWithSpaces += " ";
@@ -56,13 +56,13 @@ public class ModelsRange {
      *
      * @param arrParameters an array of type Company to be sorted.
      */
-    private static void sortByName(Parameters[] arrParameters) {
+    private static void sortByName(Car[] arrParameters) {
         int len = arrParameters.length;
 
         for (int j = 0; j < len - 1; j++) {
             for (int i = 0; i < len - 1; i++) {
                 if (arrParameters[i + 1].getName().compareToIgnoreCase(arrParameters[i].getName()) < 0) {
-                    Parameters temp = arrParameters[i + 1];
+                    Car temp = arrParameters[i + 1];
                     arrParameters[i + 1] = arrParameters[i];
                     arrParameters[i] = temp;
                 }
@@ -75,12 +75,12 @@ public class ModelsRange {
      *
      * @param arrParameters an array of type Company to be sorted.
      */
-    private static void sortByForbesIndex(Parameters[] arrParameters) {
+    private static void sortByForbesIndex(Car[] arrParameters) {
         int len = arrParameters.length;
         for (int j = 0; j < len - 1; j++) {
             for (int i = 0; i < len - 1; i++) {
                 if (arrParameters[i + 1].getCarBody().compareToIgnoreCase(arrParameters[i].getCarBody())< 0){
-                    Parameters temp = arrParameters[i + 1];
+                    Car temp = arrParameters[i + 1];
                     arrParameters[i + 1] = arrParameters[i];
                     arrParameters[i] = temp;
                 }
@@ -93,12 +93,12 @@ public class ModelsRange {
      *
      * @param arrParameters an array of type Company to be sorted.
      */
-    private static void sortByEngineVolume(Parameters[] arrParameters) {
+    private static void sortByEngineVolume(Car[] arrParameters) {
         int len = arrParameters.length;
         for (int j = 0; j < len - 1; j++) {
             for (int i = 0; i < len - 1; i++) {
                 if (arrParameters[i + 1].getEngineVolume() > arrParameters[i].getEngineVolume()) {
-                    Parameters temp = arrParameters[i + 1];
+                    Car temp = arrParameters[i + 1];
                     arrParameters[i + 1] = arrParameters[i];
                     arrParameters[i] = temp;
                 }
@@ -111,12 +111,12 @@ public class ModelsRange {
      *
      * @param arrParameters an array of type Company to be sorted.
      */
-    private static void sortByEnginePower(Parameters[] arrParameters) {
+    private static void sortByEnginePower(Car[] arrParameters) {
         int len = arrParameters.length;
         for (int j = 0; j < len - 1; j++) {
             for (int i = 0; i < len - 1; i++) {
                 if (arrParameters[i + 1].getEnginePower() > arrParameters[i].getEnginePower()) {
-                    Parameters temp = arrParameters[i + 1];
+                    Car temp = arrParameters[i + 1];
                     arrParameters[i + 1] = arrParameters[i];
                     arrParameters[i] = temp;
                 }
@@ -126,12 +126,12 @@ public class ModelsRange {
 
 
 
-    private static void sortByPrice(Parameters[] arrParameters) {
+    private static void sortByPrice(Car[] arrParameters) {
         int len = arrParameters.length;
         for (int j = 0; j < len - 1; j++) {
             for (int i = 0; i < len - 1; i++) {
                 if (arrParameters[i + 1].getPrice() > arrParameters[i].getPrice()) {
-                    Parameters temp = arrParameters[i + 1];
+                    Car temp = arrParameters[i + 1];
                     arrParameters[i + 1] = arrParameters[i];
                     arrParameters[i] = temp;
                 }
@@ -147,9 +147,9 @@ public class ModelsRange {
      * @param arrParameters an array of type Company to be sorted
      * @return maxNameLength int value of a longest name's length
      */
-    private static int getLongestName(Parameters[] arrParameters) {
+    private static int getLongestName(Car[] arrParameters) {
         int maxNameLength = arrParameters[0].getName().length();
-        for (Parameters elem : arrParameters) {
+        for (Car elem : arrParameters) {
             if (elem.getName().length() > maxNameLength) {
                 maxNameLength = elem.getName().length();
             }
@@ -163,10 +163,10 @@ public class ModelsRange {
      *
      * @param arrParameters an array of type Company to be initialized.
      */
-    private static void initParametersArray(Parameters[] arrParameters) {
+    private static void initParametersArray(Car[] arrParameters) {
         System.out.println("Initializing array...");
 
-        Parameters C_class = new Parameters();
+        Car C_class = new Car();
         C_class.setName("C_class");
         C_class.setCarBody("sedan");
         C_class.setEngineVolume(2);
@@ -175,7 +175,7 @@ public class ModelsRange {
 
         arrParameters[0] = C_class;
 
-        Parameters E_class = new Parameters();
+        Car E_class = new Car();
         C_class.setName("E_class");
         C_class.setCarBody("sedan");
         C_class.setEngineVolume(3);
@@ -184,7 +184,7 @@ public class ModelsRange {
 
         arrParameters[1] = E_class;
 
-        Parameters S_class = new Parameters();
+        Car S_class = new Car();
         C_class.setName("S_class");
         C_class.setCarBody("sedan");
         C_class.setEngineVolume(5);
@@ -193,7 +193,7 @@ public class ModelsRange {
 
         arrParameters[2] = S_class;
 
-        Parameters G_class = new Parameters();
+        Car G_class = new Car();
         C_class.setName("G_class");
         C_class.setCarBody("SUV");
         C_class.setEngineVolume(6);
@@ -202,7 +202,7 @@ public class ModelsRange {
 
         arrParameters[3] = G_class;
 
-        Parameters GLE_class = new Parameters();
+        Car GLE_class = new Car();
         C_class.setName("GLE_class");
         C_class.setCarBody("SUV");
         C_class.setEngineVolume(3);
@@ -211,7 +211,7 @@ public class ModelsRange {
 
         arrParameters[4] = GLE_class;
 
-        Parameters GLE_Coupe_class = new Parameters();
+        Car GLE_Coupe_class = new Car();
         C_class.setName("GLE_Coupe_class");
         C_class.setCarBody("sport coupe");
         C_class.setEngineVolume(3);
@@ -220,7 +220,7 @@ public class ModelsRange {
 
         arrParameters[5] = GLE_Coupe_class;
 
-        Parameters GLS_class = new Parameters();
+        Car GLS_class = new Car();
         C_class.setName("GLS_class");
         C_class.setCarBody("SUV");
         C_class.setEngineVolume(4);

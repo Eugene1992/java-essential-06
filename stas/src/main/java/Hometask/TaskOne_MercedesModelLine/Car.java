@@ -2,9 +2,22 @@ package Hometask.TaskOne_MercedesModelLine;
 
 /**
  * Created by Станислав on 19.08.2016.
- * class Parameters contains car list with options variable.
+ * class Car contains car list with options variable.
  */
-public class Parameters {
+public class Car {
+
+    /*
+
+    public Car(String name, String carBody, int engineVolume, int enginePower, int price) {
+    this.name = name;
+    this.carBody = carBody;
+    this.engineVolume = engineVolume;
+    this.enginePower = enginePower;
+    this.price = price;
+    }
+    hatchback   , station wagon car, coupe , SUV
+    */
+
     /**
      * String name shows the name of the model.
      */
@@ -52,7 +65,7 @@ public class Parameters {
 
     /*
 
-    public Parameters(String name, String carBody, int engineVolume, int enginePower, int price) {
+    public Car(String name, String carBody, int engineVolume, int enginePower, int price) {
     this.name = name;
     this.carBody = carBody;
     this.engineVolume = engineVolume;
