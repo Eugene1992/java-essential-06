@@ -1,12 +1,8 @@
 package cw09;
 
-import cw03.Employee;
-
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
 
 public class Java8Test {
     public static void main(String[] args) {
@@ -20,11 +16,10 @@ public class Java8Test {
 
         employees
                 .stream()
-                .filter(e -> e.gender == Gender.MALE)
-                .filter(e -> e.salary > 10_000)
+                .filter(e -> e.gender == Gender.MALE && e.salary > 10_000)
                 .forEach(System.out::println);
 
-        System.out.println();
+        /*System.out.println();
 
         employees
                 .stream()
@@ -42,7 +37,7 @@ public class Java8Test {
 
         long employee = employees.stream().peek(System.out::println).count();
 
-        System.out.println(employee);
+        System.out.println(employee);*/
     }
 
     static class Employee {

@@ -2,6 +2,7 @@ package cw10;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.HashMap;
 
 public class Employee implements Cloneable {
     private String name;
@@ -12,6 +13,11 @@ public class Employee implements Cloneable {
         this.name = name;
         this.salary = salary;
         this.birthday = birthday;
+    }
+
+    public Employee(String name, int salary) {
+        this.name = name;
+        this.salary = salary;
     }
 
     public String getName() {
